@@ -43,11 +43,11 @@
 				$modelo = $reg->numero_modelo;
 				$capacidade = $reg->capacidade;
 				$peso = $reg->peso;
-				$nome_teste = $reg->nome_teste;
-				$pontuacao_maxima = $reg->pontuacao_maxima;
-				$data_teste = $reg->data_teste;
-				$qtd_horas = $reg->qtd_horas;
-				$pontuacao = $reg->pontuacao;
+				$nome_teste[$i] = $reg->nome_teste;
+				$pontuacao_maxima[$i] = $reg->pontuacao_maxima;
+				$data_teste[$i] = $reg->data_teste;
+				$qtd_horas[$i] = $reg->qtd_horas;
+				$pontuacao[$i] = $reg->pontuacao;
 				$tecnico = $reg->tecnico;
 	
 				$i++;
@@ -73,12 +73,13 @@
 			<b>Peso(kg): </b><?= $peso?> 
 		</fieldset>
 		<fieldset>
-		<legend>Teste</legend>
-			<b>Nome: </b><?= $nome_teste ?> <br />
-			<b>Pontuação máxima: </b><?= $pontuacao_maxima?> <br />
-			<b>Data do teste: </b><?= $data_teste?> <br />
-			<b>Quantidade de horas: </b><?= $qtd_horas?> <br />
-			<b>Pontuação: </b><?= $pontuacao?>
+		<?php for ($i = 0; $i < count($nome_teste); $i++) {?>
+			<b>Nome: </b><?= $nome_teste[$i] ?> <br />
+			<b>Pontuação máxima: </b><?= $pontuacao_maxima[$i]?> <br />
+			<b>Data do teste: </b><?= $data_teste[$i]?> <br />
+			<b>Quantidade de horas: </b><?= $qtd_horas[$i]?> <br />
+			<b>Pontuação: </b><?= $pontuacao[$i]?> <br /><br />
+		<?php }?>
 		</fieldset>
 		<fieldset>
 		<legend>Técnico responsável</legend>
